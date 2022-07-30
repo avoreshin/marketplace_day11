@@ -1,13 +1,18 @@
 import React from 'react';
 import styled from "styled-components/macro";
-import {Card} from "@mui/material";
-import logo from "../logo.svg";
+import {Button, Card} from "@mui/material";
+import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
+import {useSnackbar} from "notistack";
 
 function ProductCard(props) {
     const {title, price} = props.data
 
-    // console.log(props)
+    const { enqueueSnackbar } = useSnackbar();
 
+    const handleClickVariant =(variant)  => ()=> {
+        enqueueSnackbar('Add card to Basket!', (variant));
+        props.setCount(props.count + 1)
+    };
     return (
         <div css={`
           width: 330px;
@@ -27,13 +32,22 @@ function ProductCard(props) {
                 />
             </div>
             <div css={`display: block;
-              padding: 20px`}>
-                <span css={`font-size: 20px;
-                  color: #39D88F`}>{title}</span>
+              padding: 0 20px`}>
+                <p css={`font-size: 20px;
+                  color: #39D88F`}>{title}</p>
                 <span css={`font-size: 20px;
                   color: #F2F2F2;
                   float: right`}>{price}</span>
             </div>
+            <div css={`
+              text-align: center; color: #ffffff;`}>
+
+                <Button css={`width: 100%`} onClick={handleClickVariant("susses")}>
+                    <LocalGroceryStoreIcon fontSize={'large'}/>
+                    <h3>ADD to cart </h3>
+                </Button>
+            </div>
+
         </div>
     );
 }
