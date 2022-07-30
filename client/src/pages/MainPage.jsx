@@ -2,26 +2,23 @@ import React, {useState} from 'react';
 import ProductCard from "../components/ProductCard";
 import logo from "../logo.svg";
 import App from "../App";
-import {AppBar, Container, IconButton,  ListItem, Toolbar} from "@mui/material";
+import {AppBar, Container, IconButton, ImageList, ListItem, Toolbar} from "@mui/material";
 import Bange from "@mui/material/Badge"
 import styled from "styled-components/macro";
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
-// import dataimport from '../api/data.json'
+
+import dataimport from '../api/data.json'
 
 function MainPage(props) {
     const [search, setSeatch] = useState('');
-    const [data, setData] = useState();
+    const [data, setData] = useState([]);
     const [basket, setBasket] = useState('')
     const [count, setCount] = useState(0)
     const [login, setLogin] = useState('false')
 
-    fetch('../api/data.json')
-        .then((res) => res.json())
-        .then((data) => {setData(data)
-            console.log(data)
-        });
 
-    console.log(data);
+    // setData(dataimport);
+    console.log(typeof dataimport);
     return (
 
         <div css={`background-color: #282c34;
@@ -39,9 +36,13 @@ function MainPage(props) {
                       margin: 0 100px 0 auto;
                       color: #61dafb;`}>
 
-                        <IconButton onClick={()=>{return (setCount(count+1))}}>
+                        <IconButton onClick={() => {
+                            return (setCount(count + 1))
+                        }}>
                             <Bange badgeContent={count} color={"error"}>
-                                <LocalGroceryStoreIcon fontSize={'large'} css={`color: #E26060;`}/>
+                                <LocalGroceryStoreIcon fontSize={'large'} css={`
+                                  color: #E26060;
+                                `}/>
                             </Bange>
                         </IconButton>
 
@@ -49,14 +50,18 @@ function MainPage(props) {
                 </Toolbar>
 
             </AppBar>
+            <AppBar>
+
+            </AppBar>
             <Container>
+                <ImageList cols={3} gap={8}>
 
-                {data? data.map((item, index) => {
-                    return (<ProductCard key={index} data={item}/>)
-                }):""}
+                    {dataimport.map((item, index) => {
+                        return (<ProductCard key={index} data={item}/>)
+                    })}
 
+                </ImageList>
             </Container>
-
 
         </div>
     );
