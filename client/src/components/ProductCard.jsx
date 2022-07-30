@@ -6,7 +6,7 @@ import logo from "../logo.svg";
 function ProductCard(props) {
     const {title, price} = props.data
 
-    console.log(props)
+    // console.log(props)
 
     return (
         <div css={` padding: 20px;
@@ -21,7 +21,9 @@ function ProductCard(props) {
           }
         `}>
 
-            <img src={logo} alt=""/>
+            <img  src={props.data.photo.url} alt={props.data.photo.alt}
+            css={` width: 100%`}
+            />
             <div css={`display: block`}>
                 <span css={`font-size: 36px;
                   color: #39D88F`}>{title}</span>

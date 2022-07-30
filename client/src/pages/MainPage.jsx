@@ -6,14 +6,22 @@ import {AppBar, Container, IconButton,  ListItem, Toolbar} from "@mui/material";
 import Bange from "@mui/material/Badge"
 import styled from "styled-components/macro";
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+// import dataimport from '../api/data.json'
 
 function MainPage(props) {
     const [search, setSeatch] = useState('');
-    const [data, setData] = useState([{price: "1000", title: "Milk"}]);
+    const [data, setData] = useState();
     const [basket, setBasket] = useState('')
     const [count, setCount] = useState(0)
     const [login, setLogin] = useState('false')
 
+    fetch('../api/data.json')
+        .then((res) => res.json())
+        .then((data) => {setData(data)
+            console.log(data)
+        });
+
+    console.log(data);
     return (
 
         <div css={`background-color: #282c34;
@@ -43,9 +51,9 @@ function MainPage(props) {
             </AppBar>
             <Container>
 
-                {data && data.map((item, index) => {
+                {data? data.map((item, index) => {
                     return (<ProductCard key={index} data={item}/>)
-                })}
+                }):""}
 
             </Container>
 
