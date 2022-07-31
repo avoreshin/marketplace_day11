@@ -3,15 +3,17 @@ import styled from "styled-components/macro";
 import {Button, Card} from "@mui/material";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
 import {useSnackbar} from "notistack";
+import {useDispatch, useSelector} from "react-redux";
 
 function ProductCard(props) {
     const {title, price} = props.data
-
+    const dispatch = useDispatch()
     const { enqueueSnackbar } = useSnackbar();
 
     const handleClickVariant =(variant)  => ()=> {
         enqueueSnackbar('Add card to Basket!', (variant));
         props.setCount(props.count + 1)
+        dispatch({type:"ADD_ORDER", payload: props.data})
     };
     return (
         <div css={`
@@ -42,7 +44,7 @@ function ProductCard(props) {
             <div css={`
               text-align: center; color: #ffffff;`}>
 
-                <Button css={`width: 100%`} onClick={handleClickVariant("susses")}>
+                <Button css={`width: 100%`} onClick={handleClickVariant("success")}>
                     <LocalGroceryStoreIcon fontSize={'large'}/>
                     <h3>ADD to cart </h3>
                 </Button>

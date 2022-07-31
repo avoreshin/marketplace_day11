@@ -9,6 +9,7 @@ import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 
 import dataimport from '../api/data.json'
 import HeaderApp from "../components/HeaderApp";
+import {useDispatch, useSelector} from "react-redux";
 
 function MainPage(props) {
     const [search, setSeatch] = useState('');
@@ -16,8 +17,6 @@ function MainPage(props) {
     const [basket, setBasket] = useState('')
     const [count, setCount] = useState(0)
     const [login, setLogin] = useState('false')
-
-    console.log(typeof dataimport);
 
     return (
         <div css={`background-color: #282c34;

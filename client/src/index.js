@@ -5,14 +5,30 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter} from "react-router-dom";
 import {SnackbarProvider} from "notistack";
+import {createStore} from "redux";
+import {Provider} from "react-redux";
 
+const defaultState = {
+  orders: []
+}
+const reducer = (state = defaultState, action) => {
+    switch (action.type) {
+        case "ADD_ORDER":
+            return {...state, orders: [...state.orders, action.payload]}
+        default:
+            return state
+    }
+}
 
+const store = createStore(reducer)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <SnackbarProvider maxSnack={3}>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </Provider>
     </SnackbarProvider>
 );
 

@@ -6,6 +6,7 @@ import Bange from "@mui/material/Badge"
 import styled from "styled-components/macro";
 import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
 import LogoutIcon from '@mui/icons-material/Logout';
+import {BrowserRouter as Router, Link} from 'react-router-dom';
 
 function HeaderApp({count, setCount, children}) {
 
@@ -22,7 +23,7 @@ function HeaderApp({count, setCount, children}) {
                 <div css={`float: right;
                   margin: 0 100px 0 auto;
                   color: #61dafb;`}>
-                    <a href={"/my-orders"} css={`
+                    <Link to="/my-orders" css={`
                       margin: 0 30px 0 auto;
                       color: #61dafb;`}>
 
@@ -37,7 +38,7 @@ function HeaderApp({count, setCount, children}) {
                                 </Tooltip>
                             </Bange>
                         </IconButton>
-                    </a>
+                    </Link>
 
                     <a href={"/"} css={`
                       margin: 0 100px 0 auto;
