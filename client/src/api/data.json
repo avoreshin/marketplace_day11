@@ -1,0 +1,61 @@
+ [{
+   "id": 0,
+    "title": "Ноутбук Honor MagicBook X15",
+    "photo": {
+      "url": "https://img.mvideo.ru/Pdb/small_pic/200/30062056b.jpg",
+      "urlbig": "https://img.mvideo.ru/Big/30062056bb.jpg",
+      "alt": "Ноутбук"
+    },
+    "price": 62999
+  },
+  {
+    "id": 1,
+    "title": "Смартфон Xiaomi 11 Lite 5G",
+    "photo": {
+      "url": "https://img.mvideo.ru/Pdb/small_pic/200/30059673b.jpg",
+      "urlbig": "https://img.mvideo.ru/Big/30059673b.jpg",
+      "alt": "Смартфон"
+    },
+    "price": 24499
+  },
+  {
+    "id": 2,
+    "title": "Телевизор HEC R1 50 S 4K",
+    "photo": {
+      "url": "https://img.mvideo.ru/Pdb/small_pic/200/10030698b.jpg",
+      "urlbig": "https://img.mvideo.ru/Big/10030698b.jpg",
+      "alt": "Телевизор"
+    },
+    "price": 26999
+  },
+  {
+    "id": 3,
+    "title": "Кофемашина DeLonghi",
+    "photo": {
+      "url": "https://img.mvideo.ru/Pdb/small_pic/200/4110323b.jpg",
+      "urlbig": "https://img.mvideo.ru/Big/4110323b.jpg",
+      "alt": "Кофемашина"
+    },
+    "price": 29999
+  },
+  {
+    "id": 4,
+    "title": "Струйное МФУ Canon PIXMA",
+    "photo": {
+      "url": "https://img.mvideo.ru/Pdb/small_pic/200/30054578b.jpg",
+      "urlbig": "https://img.mvideo.ru/Big/30054578b.jpg",
+      "alt": "Струйное"
+    },
+    "price": 18999
+  },
+  {
+    "id": 5,
+    "title": "Робот-пылесос Tefal X",
+    "photo": {
+      "url": "https://img.mvideo.ru/Pdb/small_pic/200/20075210b.jpg",
+      "urlbig": "https://img.mvideo.ru/Big/20075210b.jpg",
+      "alt": ""
+    },
+    "price": 32999
+  }
+]
