@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import MainPage from "./pages/MainPage";
 import {Route, Routes} from "react-router-dom";
 import MyOrders from "./pages/MyOrders";
-import {useDispatch, useSelector} from "react-redux";
+// import {useDispatch, useSelector} from "react-redux";
 import React from 'react';
 
-function App() {
+const App: React.FC = () => {
     return (
         <Routes>
             <Route index element={<MainPage/>}/>
@@ -16,5 +15,4 @@ function App() {
 
     );
 }
-
 export default App;

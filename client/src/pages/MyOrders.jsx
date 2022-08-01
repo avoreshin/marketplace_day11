@@ -1,10 +1,8 @@
 import React from 'react';
 import HeaderApp from "../components/HeaderApp";
-import styled from "styled-components/macro";
 import {Container} from "@mui/material";
 import BasketItems from "../components/BasketItems";
-import data from '../api/data.json'
-import {useDispatch, useSelector} from "react-redux";
+import { useSelector} from "react-redux";
 
 function MyOrders(props) {
 

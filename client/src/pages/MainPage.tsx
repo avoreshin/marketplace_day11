@@ -1,26 +1,26 @@
 import React, {useState} from 'react';
 import ProductCard from "../components/ProductCard";
-import logo from "../logo.svg";
-import App from "../App";
-import {AppBar, Container, IconButton, ImageList, ListItem, Toolbar, Tooltip} from "@mui/material";
-import Bange from "@mui/material/Badge"
-import styled from "styled-components/macro";
-import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import {Container, ImageList} from "@mui/material";
+import styled from "@emotion/styled";
 
 import dataimport from '../api/data.json'
 import HeaderApp from "../components/HeaderApp";
 import {useDispatch, useSelector} from "react-redux";
+import {createInterface} from "readline";
 
-function MainPage(props) {
-    const [search, setSeatch] = useState('');
-    const [data, setData] = useState([]);
-    const [basket, setBasket] = useState('')
+function MainPage() {
+    // const [search, setSeatch] = useState('');
+    // const [data, setData] = useState([]);
+    // const [basket, setBasket] = useState('')
     const [count, setCount] = useState(0)
-    const [login, setLogin] = useState('false')
+    // const [login, setLogin] = useState('false')
 
+    const WrapperBody = styled.div`
+      background-color: #282c34;
+      height: 100vh
+    `
     return (
-        <div css={`background-color: #282c34;
-          height: 100vh`}>
+        <WrapperBody>
             <HeaderApp count={count} setCount={setCount}/>
             <Container>
                 <ImageList cols={3} gap={10}>
@@ -31,7 +31,7 @@ function MainPage(props) {
             </Container>
 
 
-        </div>
+        </WrapperBody>
     );
 }
 
