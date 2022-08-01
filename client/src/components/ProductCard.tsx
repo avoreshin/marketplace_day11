@@ -2,8 +2,8 @@ import React from 'react';
 import styled from "@emotion/styled";
 import {Button} from "@mui/material";
 import LocalGroceryStoreIcon from "@mui/icons-material/LocalGroceryStore";
-import {OptionsObject, useSnackbar, VariantType} from "notistack";
-import {useDispatch, useSelector} from "react-redux";
+import { useSnackbar, VariantType} from "notistack";
+import {useDispatch} from "react-redux";
 
 function ProductCard(props: { data: { photo?: any; title?: any; price?: any; }; setCount: (arg0: any) => void; count: number; }) {
     const {title, price} = props.data

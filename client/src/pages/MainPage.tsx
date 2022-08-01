@@ -5,8 +5,8 @@ import styled from "@emotion/styled";
 
 import dataimport from '../api/data.json'
 import HeaderApp from "../components/HeaderApp";
-import {useDispatch, useSelector} from "react-redux";
-import {createInterface} from "readline";
+// import {useDispatch, useSelector} from "react-redux";
+// import {createInterface} from "readline";
 
 function MainPage() {
     // const [search, setSeatch] = useState('');
@@ -21,7 +21,7 @@ function MainPage() {
     `
     return (
         <WrapperBody>
-            <HeaderApp count={count} setCount={setCount}/>
+            <HeaderApp count={count}/>
             <Container>
                 <ImageList cols={3} gap={10}>
                     {dataimport.map((item, index) => {
